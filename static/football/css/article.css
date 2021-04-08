@@ -1,0 +1,14 @@
+article {
+    direction: rtl;
+    font-family: Shabnam;
+    font-size: 15px;
+}
+
+.title {
+    font-family: Sahel;
+    font-size: 20px;
+}
+
+.article-img {
+    width: 500px;
+}

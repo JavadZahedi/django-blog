@@ -1,0 +1,28 @@
+{% extends 'football/base_articles.html' %}
+{% load static %}
+{% load base_filters %}
+
+{% block head %}
+    <title>Article</title>
+	<link rel='stylesheet' href='{% static "football/css/article.css" %}'>
+{% endblock %}
+
+{% block content %}
+	<article class='w-100 p-3'>
+        <img src='{{article.thumbnail.url}}' class='d-block img-fluid img-thumbnail my-2 mx-auto article-img'>
+        <div class='container card my-3 p-3 mx-auto shadow article'>
+                 
+            <p class='font-weight-bold text-right m-1 title'>{{article.title}}</p>
+            <hr class='m-2'>
+            <p class='text-justify m-1'>{{article.content|linebreaksbr}}</p>
+            <hr class='m-2'>
+            <p class='small text-right m-1'>نوشته شده توسط {{article.author}}</p>
+            <p class='small text-right m-1'>تاریخ انتشار: {{article.jpublish}}</p>
+            <p class='small text-right m-1'>
+                {% for category in article.categories.all %}
+                <span>#{{category.name|underscored}}</span>
+                {% endfor %}
+            </p>            
+        </div>
+	</article>	
+{% endblock %}

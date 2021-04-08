@@ -1,0 +1,18 @@
+.pagination {
+    font-family: Sahel;
+    font-size: 15px;
+}
+
+a.page-link {
+    color: #290606;
+}
+
+a.page-link:hover {
+    color: #250404;
+    background-color: #f1dbd6;
+}
+
+.pagination li.active a {
+    background-image: url('../images/pagination_button.jpg') !important;
+    border-color: #642c12 !important;
+}

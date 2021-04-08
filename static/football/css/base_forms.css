@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Sahel;
+    src: url('/static/football/fonts/Sahel/Sahel.eot');
+    src: url('/static/football/fonts/Sahel/Sahel.eot?#iefix') format('/static/football/fonts/Sahel/Sahel-opentype'),
+            url('/static/football/fonts/Sahel/Sahel.woff') format('woff'),
+            url('/static/football/fonts/Sahel/Sahel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('/static/football/fonts/Shabnam/Shabnam.eot');
+    src: url('/static/football/fonts/Shabnam/Shabnam.eot?#iefix') format('/static/football/fonts/Shabnam/Shabnam-opentype'),
+            url('/static/football/fonts/Shabnam/Shabnam.woff') format('woff'),
+            url('/static/football/fonts/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+main {
+    direction: rtl;
+    min-height: 100vh;
+    background-image: url('../images/header_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Shabnam;
+}
+
+.title {
+    width: 200px;
+    background-color: #636363c7;
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px #202225;
+}
+
+.form-div {
+    max-width: 400px;
+    background-color: #636363c7;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.form-div label {
+    font-size: 15px;
+    text-shadow: 2px 2px 5px #202225;
+}
+
+.form-div input[type=file] {
+    color: white;
+}
+
+.form-div input {
+    margin: auto;
+    width: 165px;
+}

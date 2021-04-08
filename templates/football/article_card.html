@@ -1,0 +1,19 @@
+{% load base_filters %}
+<article class='card m-2 shadow article'>
+    <img src='{{article.thumbnail.url}}' class='img-thumbnail card-img-top article-img'>
+    
+    <div class='p-2'>
+        <p class='font-weight-bold text-right m-1 title'>{{article.title}}</p>
+        <hr class='m-2'>
+        <p class='text-justify m-1'>{{article.content|truncatewords:40}}</p>
+        <hr class='m-2'>
+        <p class='small text-right m-1'>نوشته شده توسط {{article.author}}</p>
+        <p class='small text-right m-1'>تاریخ انتشار: {{article.jpublish}}</p>
+        <p class='small text-right m-1'>
+            {% for category in article.categories.all %}
+            <span>#{{category.name|underscored}}</span>
+            {% endfor %}
+        </p>
+        <a href='{% url "football:article" article.slug %}' class="btn btn-primary continue" role="button">ادامه مطلب &larr;</a>
+    </div>
+</article>

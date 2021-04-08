@@ -1,0 +1,24 @@
+{% load base_filters %}
+<div class='w-100 py-2 page-div m-0'>
+    <ul class="pagination pagination-md justify-content-center p-0 flex-row-reverse flex-wrap">
+        {% if articles.has_previous %}		
+            <li class='page-item'><a class='page-link' href="?page={{articles.previous_page_number}}">قبلی &raquo;</a></li>
+        {% else %}
+            <li class='page-item disabled'><a class='page-link' href="#">قبلی &raquo;</a></li>
+        {% endif %}
+        
+        {% for i in articles.paginator.page_range %}
+            {% if i == articles.number %}
+            <li class='page-item active'><a class='page-link' href="?page={{i}}">{{i|to_persian}}</a></li>
+            {% else %}
+            <li class='page-item'><a class='page-link' href="?page={{i}}">{{i|to_persian}}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if articles.has_next %}
+            <li class='page-item'><a class='page-link' href="?page={{articles.next_page_number}}">&laquo; بعدی</a></li>
+        {% else %}
+            <li class='page-item disabled'><a class='page-link' href="#">&laquo; بعدی</a></li>
+        {% endif %}
+    </ul>
+</div>

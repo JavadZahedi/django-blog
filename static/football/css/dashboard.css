@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Sahel;
+    src: url('/static/football/fonts/Sahel/Sahel.eot');
+    src: url('/static/football/fonts/Sahel/Sahel.eot?#iefix') format('/static/football/fonts/Sahel/Sahel-opentype'),
+            url('/static/football/fonts/Sahel/Sahel.woff') format('woff'),
+            url('/static/football/fonts/Sahel/Sahel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Shabnam;
+    src: url('/static/football/fonts/Shabnam/Shabnam.eot');
+    src: url('/static/football/fonts/Shabnam/Shabnam.eot?#iefix') format('/static/football/fonts/Shabnam/Shabnam-opentype'),
+            url('/static/football/fonts/Shabnam/Shabnam.woff') format('woff'),
+            url('/static/football/fonts/Shabnam/Shabnam.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    direction: rtl;
+    font-family: Shabnam;
+}
+
+img.profile-img {
+    height: 22vw;
+}
+
+@media screen and (max-width: 767px) {
+    img.profile-img {
+        height: 85vw;
+    }
+}
+
+header {
+    background-image: url('../images/header_bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.user-info {
+    background-color: #68859cc7;
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px #050f1d;
+}
+
+main {
+    background-image: url('../images/content_bg.jpg');
+    background-repeat: repeat;
+}
+
+aside {
+    border-radius: 0;
+}
+
+aside a {
+    background-color: #77885dc7;
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px #091d05;
+}
+
+aside a:hover {
+    background-color: #5dbb40c7;
+    text-decoration: none;
+}

@@ -1,0 +1,25 @@
+{% extends 'football/base_articles.html' %}
+{% load static %}
+{% load base_filters %}
+{% load base_tags %}
+
+{% block head %}
+	<title>Home</title>
+	<link rel='stylesheet' href='{% static "football/css/article_card.css" %}'>
+	<link rel='stylesheet' href='{% static "football/css/article_pagination.css" %}'>
+{% endblock %}
+
+{% block content %}
+	<div class='w-100 d-flex flex-row-reverse flex-wrap justify-content-center align-items-start'>
+	{% for article in articles %}
+		{% article_card article %}
+	{% endfor %}
+	</div>
+	{% if articles.has_other_pages %}
+		{% article_pagination articles %}
+	{% endif %}
+	<div class='alert alert-info text-right m-3'>
+		<p>تعداد بازدید ها: {{request.COOKIES.visits}}</p>
+		<p>آخرین بازدید: {{request.COOKIES.last_visit}}</p>
+	</div>
+{% endblock %}

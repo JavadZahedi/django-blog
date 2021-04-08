@@ -1,0 +1,8 @@
+.form-div {
+    max-width: 650px;
+}
+
+.form-div textarea {
+    width: 400px;
+    max-width:95%;
+}

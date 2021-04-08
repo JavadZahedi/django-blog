@@ -1,0 +1,17 @@
+article {
+    font-family: Shabnam;
+    font-size: 13px;
+    width: 300px;
+}
+
+.title {
+    font-size: 15px;
+}
+
+.article-img {
+    height: 200px;
+}
+
+.continue {
+    font-size: 11px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+{% load base_filters %}
+{% load base_tags %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='{% static "football/css/dashboard.css" %}'>
+    <link rel='stylesheet' href='{% static "football/css/article_card.css" %}'>
+	<link rel='stylesheet' href='{% static "football/css/article_pagination.css" %}'>
+    <title>Dashboard</title>
+
+    <!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <header class='row container-fluid p-0 m-0 text-white'>
+        <div class='col-md-3 p-2'>
+            <img src='{{profile.picture.url}}' class='d-block w-100 rounded-circle img-thumbnail profile-img'>
+        </div>
+        <div class='col-md-6 p-4'>
+            <div class='container-fluid user-info'>
+                <div class='row pu-2'>
+                    <div class='col-sm-4 text-right p-2'>نام:</div>
+                    <div class='col-sm-8 text-right p-2'>{{profile.user.first_name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-4 text-right p-2'>نام خانوادگی:</div>
+                    <div class='col-sm-8 text-right p-2'>{{profile.user.last_name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-4 text-right p-2'>تعداد مقالات:</div>
+                    <div class='col-sm-8 text-right p-2'>{{articles.paginator.count|to_persian}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-4 text-right p-2'>نام کاربری:</div>
+                    <div class='col-sm-8 text-right p-2'>{{profile.user.username}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-4 text-right p-2'>ایمیل:</div>
+                    <div class='col-sm-8 text-right p-2'>{{profile.user.email}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-4 text-right p-2'>تاریخ تولد:</div>
+                    <div class='col-sm-8 text-right p-2'>{{profile.birthday|date_to_jalali}}</div>
+                </div>
+            </div>
+        </div>
+        <aside class='col-md-3 p-0 text-center d-flex flex-column justify-content-center'>
+            <a type='button' class='d-block text-white m-1 p-2' href='{% url "football:home" %}'>
+                بازگشت به صفحه اصلی
+            </a>
+            <a type='button' class='d-block text-white m-1 p-2' href='{% url "football:add-article" %}'>
+                افزودن مقاله
+            </a>
+            <a type='button' class='d-block text-white m-1 p-2' href='#'>
+                ویرایش اطلاعات
+            </a>
+            <a type='button' class='d-block text-white m-1 p-2' href='{% url "football:sign-out" %}'>
+                خروج
+            </a>
+        </aside>
+    </header>
+    <main class='container-fluid p-0 m-0'>
+        <div class='text-center p-2'>
+            <span class='d-inline-block alert alert-info m-0'>مقالات نوشته شده</span>
+        </div>
+        <div class='w-100 d-flex flex-row-reverse flex-wrap justify-content-center align-items-start'>
+        {% if articles %}
+            {% for article in articles %}
+                {% article_card article %}
+            {% endfor %}
+        {% else %}
+        <div class='text-center p-2'>
+            <span class='d-inline-block alert alert-warning m-0'>شما هنوز هیچ مقاله ای ننوشته اید</span>
+        </div>
+        {% endif %}
+        </div>
+        {% if articles.has_other_pages %}
+            {% article_pagination articles %}
+        {% endif %}
+    </main>
+</body>
+</html>
