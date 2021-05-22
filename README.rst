@@ -6,8 +6,8 @@ This is a football blog. Its articles have been copied from https://www.varzesh3
 
 To run the project, do this instructions:
 
-* make a repository (``git init``) and clone the project into ``django-practice`` directory by running ``git clone https://github.com/JavadZahedi/django-practice`` on command line.
-* open the ``django-practice`` (``cd django-practice``)
+* make a repository (``git init``) and clone the project into ``django-blog`` directory by running ``git clone https://github.com/JavadZahedi/django-blog`` on command line.
+* open the ``django-blog`` (``cd django-blog``)
 * install ``virtualenv`` on your system.
 * run ``virtualenv <virtual_environment_name>`` on command line.
 * activate the virtual environment by running ``source <virtual_environment_name>/bin/activate`` on command line. (to deactivate the virtual environment you can use ``deactivate`` command.
